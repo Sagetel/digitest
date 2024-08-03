@@ -49,6 +49,13 @@ export default {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
+
+    @media (max-width: 600px) {
+      gap: 5px;
+      img {
+        display: none;
+      }
+    }
   }
   &__slider-from,
   &__slider-to {
@@ -57,10 +64,13 @@ export default {
     border: 1px solid rgb(213, 213, 213);
     border-radius: 4px;
     background: rgb(255, 255, 255);
-    padding: 10px 8px 10px 8px;
+    padding: 10px 8px 10px 8px; ///
     display: flex;
     align-items: center;
-    max-width: 120px;
+    max-width: 120px; 
+    @media (max-width: 600px) {
+      padding: 5px; ///
+    }
     span {
       color: rgb(170, 170, 170);
       font-family: PT Sans;

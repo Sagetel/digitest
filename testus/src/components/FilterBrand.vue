@@ -67,7 +67,6 @@ export default {
     clearSelection() {
       this.selectedBrands = [];
     },
-    // Метод для очистки текста поиска
     clearSearch() {
       this.searchText = "";
     },

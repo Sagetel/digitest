@@ -1,10 +1,13 @@
 <template>
   <section class="products">
-    <ProductCard
-      v-for="(product, index) in products"
-      :key="index"
-      :product="product"
-    />
+    <div class="products__title">Название категории</div>
+    <div class="products__wrapper">
+      <ProductCard
+        v-for="(product, index) in products"
+        :key="index"
+        :product="product"
+      />
+    </div>
   </section>
 </template>
 
@@ -138,7 +141,6 @@ export default {
           oldPrice: 7990,
           isAvailable: true,
         },
-       
       ],
     };
   },
@@ -148,9 +150,33 @@ export default {
 <style croped lang="scss">
 .products {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-bottom: 20px;
+  &__wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 20px;
+    @media (max-width: 1230px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 375px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__title {
+    color: rgb(51, 51, 51);
+    font-family: PT Sans;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 28px;
+    margin: 12px 0;
+    @media (min-width: 950px) {
+      display: none;
+    }
+  }
 }
 </style>

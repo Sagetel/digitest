@@ -23,7 +23,10 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 28px;
-  width: 280px;
   min-width: 280px;
+  @media (max-width: 600px) {
+    gap: 10px;
+    min-width: 250px;
+  }
 }
 </style>
