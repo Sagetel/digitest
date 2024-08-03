@@ -3,14 +3,22 @@
     <header class="header">
       <div class="header__container">
         <div class="header__logo">
-          <img class="header__icon" src="../assets/header-logo.svg" alt="logo" />
+          <img
+            class="header__icon"
+            src="../assets/header-logo.svg"
+            alt="logo"
+          />
           <span class="header__title">Логотип</span>
         </div>
         <div class="header__catalog">Каталог</div>
         <div class="header__mobile-menu" @click="toggleMobileMenu($event)">
           <img src="../assets/icons/strelka.svg" alt="menu icon" />
         </div>
-        <MyInput v-model="query" id="query" placeholder="Поиск по 100 000 товаров" />
+        <MyInput
+          v-model="query"
+          id="query"
+          placeholder="Поиск по 100 000 товаров"
+        />
         <div class="header__menu">
           <NavMenu :items="menuItems" />
         </div>

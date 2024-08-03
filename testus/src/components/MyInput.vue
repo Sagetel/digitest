@@ -1,6 +1,6 @@
 <template>
   <div class="my-input" @click="focusInput">
-    <img src="../assets/icons/lupa.svg" alt="search" />
+    <img class="my-input__lupa" src="../assets/icons/lupa.svg" alt="search" />
     <label :for="id" class="my-input__label">
       <input
         ref="inputField"
@@ -68,14 +68,14 @@ export default {
   methods: {
     handleInput(event) {
       this.internalValue = event.target.value;
-      this.$emit('input', this.internalValue);
+      this.$emit("input", this.internalValue);
     },
     focusInput() {
       this.$refs.inputField.focus();
     },
     clearInput() {
       this.internalValue = "";
-      this.$emit('input', this.internalValue);
+      this.$emit("input", this.internalValue);
     },
     handleFocus() {
       this.isFocused = true;
@@ -115,12 +115,17 @@ export default {
   border: 1px solid rgb(170, 170, 170);
   transition: all 0.1s ease-in;
   cursor: text;
-  
+
   @media (max-width: 950px) {
     margin: 0;
     border: 0;
     border-radius: 0;
-    border-bottom:1px solid rgb(170, 170, 170);
+    border-bottom: 1px solid rgb(170, 170, 170);
+  }
+  &__lupa {
+    @media (max-width: 950px) {
+      display: none;
+    }
   }
 
   &:hover {
